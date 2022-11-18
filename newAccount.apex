@@ -24,3 +24,4 @@ acList.add(ac3);
 insert acList;
 
 // insert ac1;  tek account ekler
+// ac.Active__c = 'yes'; bu custom field
