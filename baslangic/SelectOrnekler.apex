@@ -58,3 +58,9 @@ Select FIELDS(CUSTOM) from Account limit 50
 Select Rating, Count(Id) from Account group by Rating Having Count(Id) > 9
 
 /* **************** */ 
+
+Select Name from Account where createdDate = Today
+Select Name from Account where createdDate = Last_n_Weeks:2
+Select Name from Account where createdDate = This_Week
+
+/* **************** */ 
