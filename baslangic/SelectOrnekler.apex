@@ -30,3 +30,10 @@ Select Name, Available_Days__c from Contact where Available_Days__c INCLUDES('Mo
 /* **************** */
 
 Select Name, Available_Days__c from Contact where Available_Days__c EXCLUDES('Monday')
+
+/* **************** */
+
+Select Id, Name from Account order by Name Limit 10 Offset 3    (ilk 3ünü es gecip sonraki 10 accountu listeler)
+
+/* **************** */
+
