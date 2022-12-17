@@ -49,3 +49,9 @@ Select Full_Name__c, (Select Name from Courses__r) from Teacher__c
 
 /* **************** */ 	
 
+Select FIELDS(ALL) from Account limit 50
+Select FIELDS(STANDART) from Account limit 50
+Select FIELDS(CUSTOM) from Account limit 50
+
+/* **************** */ 
+
