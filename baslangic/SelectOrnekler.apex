@@ -55,3 +55,6 @@ Select FIELDS(CUSTOM) from Account limit 50
 
 /* **************** */ 
 
+Select Rating, Count(Id) from Account group by Rating Having Count(Id) > 9
+
+/* **************** */ 
