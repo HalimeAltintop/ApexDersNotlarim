@@ -24,3 +24,9 @@ Select Id, Name, StageName from Opportunity where StageName IN('Prospecting', 'C
 
 /* **************** */
 
+Select Name, Available_Days__c from Contact where Available_Days__c INCLUDES('Monday ; Friday')
+
+
+/* **************** */
+
+Select Name, Available_Days__c from Contact where Available_Days__c EXCLUDES('Monday')
