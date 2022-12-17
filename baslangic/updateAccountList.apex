@@ -7,6 +7,7 @@ List<Account> acList = [Select Id, Name, Rating
 for(Account ac : acList){
 
     ac.Rating = 'Hot';
-    update ac;
+   
 }
+update acList;
 
