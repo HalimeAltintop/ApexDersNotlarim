@@ -40,3 +40,12 @@ Select Id, Name from Account order by Name Limit 10 Offset 3    (ilk 3ünü es g
 Select Id, Name from Account Where Name Like '%Dragon'
 
 /* **************** */
+
+Select Id, Name, (Select Id, Name from Contacts) from Account
+
+/* **************** */ 	
+
+Select Full_Name__c, (Select Name from Courses__r) from Teacher__c
+
+/* **************** */ 	
+
