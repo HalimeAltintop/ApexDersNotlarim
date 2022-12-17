@@ -20,3 +20,7 @@ Select COUNT(AnnualRevenue), Rating from Account GROUP BY Rating
 
 /* **************** */
 
+Select Id, Name, StageName from Opportunity where StageName IN('Prospecting', 'Closed Won', 'Value', 'Proposition') order by StageName asc
+
+/* **************** */
+
