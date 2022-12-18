@@ -1,0 +1,121 @@
+public class CaseUtility {
+	
+    public static void createMultipleCaseswithForLoop(){
+        
+        List<Case> myCases = new List<Case>();
+        
+        for(Integer i=1; i<=10; i++){
+            
+            Case cs = new Case();
+            cs.Status = 'New';
+            cs.Origin = 'Web';
+            cs.Priority = 'High';
+            
+            myCases.add(cs);
+            
+        }
+        
+        insert myCases;
+        
+    }
+    
+    public static void createSingleCase(){
+        
+        Case cs = new Case();
+        cs.Status = 'New';
+        cs.Origin = 'Web';
+        cs.Priority = 'High';
+        
+        insert cs;
+        
+        
+    }
+    
+    public static void getSizeOfCases(){
+        
+        List<Case> myCases = [Select Id from Case];
+        System.debug(myCases.size());
+        
+    }
+    
+    public static void getSizeOfNewCases(){
+        
+        List<Case> csList = [select Id from Case where Status='New'];
+        System.debug(csList.size());
+        
+    }
+    
+    public static void delete10Cases(){
+        
+        List<Case> csList = [Select Id from Case Limit 10];
+        delete csList;
+        
+    }
+    
+    public static void deleteEscalatedCases(){
+        
+        List<Case> csList = [Select Id from Case where Status = 'Escalated'];
+        delete csList;
+        
+    }
+    
+    public static void updateCases(){    // New Cases High Priority
+        
+        List<Case> csList = [Select id, Status, Priority from Case];
+        
+        for(Case cs: csList){
+            
+            if(cs.status == 'New')
+            {
+                cs.priority = 'High';
+            }            
+        }
+        update csList;
+        
+    }
+    
+    public static void createCaseWithanAccount(){
+        
+        Account ac = new Account();
+        ac.Name = 'Best Bank';
+        
+        insert ac;
+        
+        
+        Case cs = new Case();
+        cs.Origin = 'Phone';
+        cs.Status = 'New';
+        cs.Priority = 'Low';
+        cs.AccountId = ac.Id;
+            
+       insert cs;
+        
+    }
+    
+    public static void createaCaseforEachAccount(){
+        
+        List<Account> acList = [select id from Account];
+        List<Case> csList = new List<Case>();
+        
+        for(Account ac : acList){
+            
+            Case cs = new Case();
+            cs.status = ' New';
+            cs.Origin = 'Email';
+            cs.Priority = 'Low';
+            cs.AccountId = ac.Id;
+            
+            csList.add(cs);
+            
+        }
+        
+        insert csList;
+    }
+    
+    public static void undeleteCases(){
+        
+        List<Case> csList = [Select Id from Case where isdeleted = true ALL ROWS];
+        undelete csList;
+        
+    }
+}
