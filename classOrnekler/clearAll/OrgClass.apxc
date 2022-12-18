@@ -1,0 +1,22 @@
+public class OrgClass {
+	
+    public static void ClearAll(){
+        
+        List<Entitlement> entList = [select Id from Entitlement];
+        delete entList;
+        
+        List<Case> csList = [select Id from Case];
+        delete csList;
+        
+        List<Opportunity> oppList = [select Id from Opportunity];
+        delete oppList;
+        
+        List<Contact> conList = [select Id from Contact];
+        delete conList;
+        
+        List<Account> acList = [select Id from Account];
+        delete acList;
+        
+    }
+    
+}
