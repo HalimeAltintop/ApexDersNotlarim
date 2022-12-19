@@ -1,0 +1,14 @@
+for(Integer i=1; i<=30; i++){
+    
+    Datetime d1 = Datetime.newInstance(2022,11,i);
+    
+    if(d1.format('EEEE')!='Saturday' && d1.format('EEEE')!='Sunday'){
+        
+        if(d1.format('EEEE')=='Friday'){
+            System.debug(d1.format('EEEE') + ' is important!');
+        }
+        else{
+            System.debug(d1.format('EEEE'));
+        }
+    }
+}
