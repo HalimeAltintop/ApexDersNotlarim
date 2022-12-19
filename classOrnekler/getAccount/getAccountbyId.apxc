@@ -1,0 +1,8 @@
+public class getAccountbyId {
+    public static Account getAccountwithID(ID acID){
+        
+        Account ac = [Select Id,Name from Account where Id =: acId];
+        
+        return ac;
+    }
+}
