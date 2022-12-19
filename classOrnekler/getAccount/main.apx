@@ -1,0 +1,4 @@
+Account ac1 = getAccountbyId.getAccountwithID('0017S00000FjV3gQAF');
+
+system.debug(ac1.Name);
+
