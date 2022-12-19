@@ -1,0 +1,30 @@
+public class globalVariables {
+	
+    //Global Variables (Class Variables)
+    //public degiskenler non static methodlardan ve innerclasslardan cagrilabilir.
+    //global degisken baska websitelerinde de kullanilabilir
+    //public static degiskenler static methodlarin icinde de calisabilir
+    
+    public Integer x;
+    public static Integer y;
+    
+    {
+        //degisken tanimlarken eger deger vermediysek assign etmek icin paranteze ihtiyacimiz var
+        x=18;
+    }
+    {
+        y=20;
+    }
+    
+    public void methodB(){
+        
+        System.debug(x);
+        
+    }
+    
+    public static void methodA(){
+        
+        System.debug(y);
+        
+    }
+}
