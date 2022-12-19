@@ -1,0 +1,18 @@
+public class ClassVariables {
+
+    
+    public Integer base = 12;
+    public Integer height = 18;
+    
+    public void methodA(){
+        
+        Integer base;
+        Integer height;
+        
+        base = this.base;
+        height = 20;
+        
+        system.debug(base+height);
+    }
+    
+}
