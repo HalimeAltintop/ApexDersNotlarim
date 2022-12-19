@@ -1,0 +1,3 @@
+mainClass.InnerClass ObjA = new mainClass.InnerClass();
+
+objA.howLongILive(Date.newInstance(1993, 7, 12));
