@@ -1,0 +1,12 @@
+globalVariables ObjA = new globalVariables();
+
+ObjA.methodB();
+//18
+
+
+system.debug(objA.x);
+//18
+
+
+globalVariables.methodA();
+//20
