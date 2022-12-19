@@ -1,0 +1,34 @@
+public class returnKeyword {
+		
+    public static List<Account> CreateMultipleAccounts(){
+        
+        List<Account> acList = new List<Account>();
+        
+        for(Integer i=1; i<=10; i++){
+            Account ac= new Account(Name = 'Bank of Tailand');
+            acList.add(ac);
+        }
+        insert acList;
+        return acList;
+        
+    }
+    
+    public static void CreateSingleContact(){
+        Contact con = new Contact();
+        con.FirstName = 'Ann';
+        con.LastName = 'Schoppe';
+        con.AccountId = CreateMultipleAccounts().get(0).Id;
+        
+        insert con;
+    }
+    
+}
+
+
+
+
+// main
+
+/*
+returnKeyword.CreateSingleContact();
+*/
