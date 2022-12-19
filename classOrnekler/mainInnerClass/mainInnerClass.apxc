@@ -1,0 +1,16 @@
+public class mainClass {
+
+    
+    public class InnerClass{
+        
+        public void howLongILive(Date myBirthday){
+            
+        	Integer numberofDays = myBirthday.daysBetween(Date.today());
+            
+            System.debug('I have been living for ' + numberofDays + ' days.');
+            
+        }
+        
+    }
+    
+}
