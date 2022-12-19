@@ -1,0 +1,4 @@
+
+ClassVariables newObj = new ClassVariables();
+
+newObj.methodA();
