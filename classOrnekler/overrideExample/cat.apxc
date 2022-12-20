@@ -1,0 +1,23 @@
+public class Cat extends Animal{
+    
+     public override void eat(){
+        
+        super.eat();
+        System.debug('Cats eat cat food');
+        
+    }
+    
+    public void sleep(){
+        
+        System.debug('Cats sleep with children');
+        
+    }
+    
+    public override void move(){
+        
+        super.move();
+        System.debug('Cats run faster');
+        
+    }
+
+}
