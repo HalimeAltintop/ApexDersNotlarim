@@ -1,0 +1,19 @@
+public virtual class Animal {
+
+    public void talk(){
+        System.debug('Animals do not talk');
+    }
+    
+    public void think(){
+        System.debug('Animals do not think');
+    }
+    
+    public virtual void eat(){
+        System.debug('Animals eat');
+    }
+    
+    public virtual void move(){
+        System.debug('Animals move');
+    }
+    
+}
