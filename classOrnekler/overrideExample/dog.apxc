@@ -1,0 +1,23 @@
+public class Dog extends Animal{
+
+    public override void eat(){
+        
+        super.eat();
+        System.debug('Dogs eat dog food');
+        
+    }
+    
+    public void keep(){
+        
+        System.debug('Dogs keep home safe');
+        
+    }
+    
+    public override void move(){
+        
+        super.move();
+        System.debug('Dogs run faster');
+        
+    }
+    
+}
