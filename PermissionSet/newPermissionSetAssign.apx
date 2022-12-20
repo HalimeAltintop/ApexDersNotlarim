@@ -1,0 +1,14 @@
+PermissionSet ps = new PermissionSet();
+
+ps.Label = 'New Permission Set';
+ps.Name = 'New_Permission_Set';
+
+insert ps;
+
+User u = [Select Id from User Limit 1];
+
+PermissionSetAssignment psa = new PermissionSetAssignment();
+psa.PermissionSetId = ps.Id;
+psa.AssigneeId = u.Id;
+
+insert psa;
