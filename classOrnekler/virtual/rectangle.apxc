@@ -1,0 +1,16 @@
+public class Square extends rectangle {
+
+    public static void area(Integer a){
+        
+        Integer area = a*a;
+        System.debug('The area of the square is ' + area);
+        
+    }	
+    
+    public static void perimeter(integer a){
+        
+        Integer perimeter = 4*a;
+        System.debug('The perimeter of the square is ' + perimeter);
+    }
+    
+}
