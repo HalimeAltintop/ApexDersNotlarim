@@ -1,0 +1,41 @@
+public virtual class rectangle {
+
+    public static void area(Integer a, Integer b){
+        
+        Integer area = a*b;
+        System.debug('The area of the rectangle is ' + area);
+        
+    }	
+    
+    public static void perimeter(integer a, Integer b){
+        
+        Integer perimeter = 2*(a+b);
+        System.debug('The perimeter of the rectangle is ' + perimeter);
+    
+    }
+
+    public static void numberOfSides(){
+        
+		System.debug('Kenar Sayisi 4');	        
+        
+    }
+    
+    public static void numberOfDiagonals(){
+        
+		System.debug('Kosegen Sayisi 2');	        
+        
+    }
+    
+    public static void angles(){
+        
+		System.debug('Tum acilar 90 derecedir.');	        
+        
+    }
+    
+    public static void sumOfAngles(){
+        
+		System.debug('Acilar toplami 360 derecedir.');	        
+        
+    }
+    
+}
