@@ -1,0 +1,8 @@
+public interface NewClassA {  // Interface class does not have class keyword
+
+    Integer PerimeterofTriangle(Integer a, Integer b, Integer c);
+    
+    Integer GetTotalUsers(String name);  // bu methodu ancak bu formatta kullanabiliriz. Interface classina implement edilen classlarda, methodlar ayni parametrelerle kullanilmak zorundadir!
+    
+    // void da olabilir variable type olarak
+}
