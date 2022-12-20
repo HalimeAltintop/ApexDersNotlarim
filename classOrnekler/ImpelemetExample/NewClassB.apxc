@@ -1,0 +1,19 @@
+public class NewClassB implement NewClassA {
+    
+    public Integer PerimeterofTriangle(Integer a, Integer b, Integer c){
+        
+        Integer perimeter = a + b + c;
+        
+        return perimeter;
+        
+    }
+    
+    public Integer GetTotalUsers(String name){
+        
+        List<user> userList = [Select Id, Name from User where name =: name];
+        
+        return userList.size();
+        
+    }
+
+}
