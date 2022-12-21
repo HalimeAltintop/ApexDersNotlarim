@@ -1,0 +1,11 @@
+trigger AccountTrigger on Account (before update) {
+
+    for(Account acOld : Trigger.old){
+        System.debug(acOld.Name);
+    }
+    
+    for(Account acNew : Trigger.new){
+        System.debug(acNew.Name);
+    }
+    
+}
