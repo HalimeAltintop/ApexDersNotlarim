@@ -1,0 +1,8 @@
+Case cs1 = new Case(Origin='Phone', Status='New');
+insert cs1;
+
+Case cs2 = new Case(Origin='Email', Status='New');
+insert cs2;
+
+Case cs3 = new Case(Origin='Web', Status='New');
+insert cs3;
