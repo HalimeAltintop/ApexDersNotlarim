@@ -1,0 +1,14 @@
+trigger CaseTrigger on Case (before insert) {
+
+    for(Case cs : Trigger.new){
+        
+        if(cs.Origin == 'Phone')
+            cs.Priority = 'High';
+        if(cs.Origin == 'Email')
+            cs.Priority = 'Medium';
+        if(cs.Origin == 'Web')
+            cs.Priority = 'Low';
+        
+    }
+    
+}
