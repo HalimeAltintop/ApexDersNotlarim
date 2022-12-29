@@ -1,0 +1,13 @@
+public class AccountTriggerHandler {
+    
+    public static void createCaseforAccount(Id acId){
+        Case cs = new Case();
+        cs.Status = 'Escalated';
+        cs.origin = 'Web';
+        
+        cs.AccountId = acId;
+        
+        insert cs;
+    }
+
+}
