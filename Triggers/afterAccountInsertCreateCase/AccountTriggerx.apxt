@@ -1,0 +1,35 @@
+trigger AccountTriggerx on Account (before insert, after insert, 
+                                    before update, after update,
+                                    before delete, after delete,
+                                    after undelete) 
+{
+    
+    if(Trigger.isBefore && Trigger.isInsert){
+      System.debug('Before Insert Account');  
+    }
+    
+    if(Trigger.isAfter && Trigger.isInsert){
+      AccountTriggerHandler.createCaseforAccount(Trigger.new[0].id);  
+    }
+    
+    if(Trigger.isBefore && Trigger.isUpdate){
+      System.debug('Before Update Account');  
+    }
+    
+    if(Trigger.isAfter && Trigger.isUpdate){
+      System.debug('After Update Account');  
+    }
+    
+    if(Trigger.isBefore && Trigger.isDelete){
+      System.debug('Before Delete Account');  
+    }
+    
+    if(Trigger.isAfter && Trigger.isDelete){
+      System.debug('After Delete Account');  
+    }
+    
+    if(Trigger.isAfter && Trigger.isUndelete){
+      System.debug('After Undelete Account');  
+    }
+                   
+}
