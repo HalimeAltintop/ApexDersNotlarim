@@ -1,0 +1,19 @@
+trigger CheckboxTrigger on Account (before insert, after insert, 
+                                    before update, after update, 
+                                    before delete, after delete, 
+                                    after undelete) 
+{
+
+    if(Trigger.isInsert && Trigger.isAfter){   //sadece after insert oldugunda calisir 1 kez calisir
+        System.debug('This code runs when there is an after insert.');                            
+    }
+    if(Trigger.isUpdate){     //before update ve after update`de calisir yani 2 kez calisir.
+        System.debug('This code runs when there is an update.');                            
+    }
+    if(Trigger.isBefore && Trigger.isUpdate){
+        System.debug('This code runs when there is a before update.');
+    }
+    if(Trigger.isAfter && Trigger.isDelete){
+        System.debug('This code runs when there is an after delete.');
+    }
+}
