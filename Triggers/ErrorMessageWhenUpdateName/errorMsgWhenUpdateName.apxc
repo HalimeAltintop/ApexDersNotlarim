@@ -1,0 +1,22 @@
+public class AccountTriggerHandler2 {
+
+    
+    public static void NameNotEditable(List<Account> acOldList, List<Account> acNewList){
+        
+        for(Account acOld : acOldList){
+            
+            for(Account acNew : acNewList){
+                
+                if(acOld.Name != acNew.Name){
+                    
+                    acNew.Name.addError('Name Can Not Change');
+                    
+                }
+                
+            }
+            
+        }
+        
+    }
+    
+}
