@@ -1,0 +1,40 @@
+public class OppTriggerHandlerCLass {
+
+    public static void createTask(List<Opportunity> oppList){
+        for(Opportunity oop : oppList){
+            Task tsk = new Task();
+            tsk.Status = 'Not Started';
+            tsk.Subject = 'A new task from Triggers';
+            tsk.Priority = 'Normal';
+            tsk.WhatId = oop.Id;
+            
+            insert tsk;
+        }
+    }
+    public static void createCase(List<Opportunity> oopList){
+        for(Opportunity oop : oopList){
+            Case cs = new Case();
+            cs.Status = 'New';
+            cs.Origin = 'Web';
+            cs.Description = 'This Case created from OopTrigger.';
+            
+            insert cs;
+        }
+    }
+    public static void preventDeleteWonOpp(List<Opportunity> oopList){
+        for(Opportunity opp : oopList){
+            if(opp.StageName == 'Closed Won' || opp.StageName == 'Closed Lost'){
+                opp.Id.addError('Closed won and lost opportunities can not be deleted');
+            }
+        }
+    }
+    public static void updateStageName(List<Opportunity> TriggerNewList, List<Opportunity> TriggerOldList){
+        for(Opportunity oppNew : TriggerNewList){
+            for(Opportunity oppOld : TriggerOldList){
+                if(oppNew.StageName != oppOld.StageName){
+                    oppNew.Description = 'Stage name has changed from '+oppOld.StageName + ' to '+ oppNew.StageName;
+                }
+            }
+        }
+    }
+}
