@@ -1,0 +1,34 @@
+List<Account> acList = new List<Account>();
+
+Account ac1 = new Account(Rating='Hot');
+acList.add(ac1);
+
+
+Account ac2 = new Account(Name='Bank of Poland');
+acList.add(ac2);
+
+Database.SaveResult[] result = Database.insert(acList, false);   // No Roll Back !!!
+
+//System.debug(result);
+/*
+for(Database.SaveResult res : result){
+    
+    System.debug(res.isSuccess());
+    System.debug(res.getId());
+    System.debug(res.getErrors());
+}
+*/
+
+for(Database.SaveResult res : result){
+
+    if(res.isSuccess()){
+        System.debug('Account inserted successfully');
+    }
+    else{
+        for(Database.Error err : res.getErrors()){
+        	System.debug(err.getMessage());
+            System.debug(err.getStatusCode());
+        }
+    }
+    
+}
