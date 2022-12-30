@@ -1,0 +1,17 @@
+Account ac1 = new Account(Name = 'Test Account 01');
+
+// insert ac1;
+
+Database.insert(ac1, false);
+
+Account ac2 = new Account(Name = 'Test Account 02');
+
+// insert ac2;
+
+Database.insert(ac2, false);
+
+Account ac3 = new Account();
+
+//insert ac3;
+
+Database.insert(ac3, false);
