@@ -18,17 +18,31 @@ for(Database.SaveResult res : result){
     System.debug(res.getErrors());
 }
 */
+List<Error_Log__c> ErrorLogList = new List<Error_Log__c>();
 
 for(Database.SaveResult res : result){
+    
+    Error_Log__c errorObj = new Error_Log__c();
 
     if(res.isSuccess()){
         System.debug('Account inserted successfully');
+        errorObj.Status__c = 'Succesfull';
+        
+        ErrorLogList.add(errorObj);
     }
     else{
         for(Database.Error err : res.getErrors()){
-        	System.debug(err.getMessage());
+            System.debug(err.getMessage());
             System.debug(err.getStatusCode());
+                
+            errorObj.Status__c = 'Unsuccesfull';
+            errorObj.Error__c = true;
+            
+            ErrorLogList.add(errorObj);
         }
     }
     
+    
 }
+
+insert ErrorLogList;
