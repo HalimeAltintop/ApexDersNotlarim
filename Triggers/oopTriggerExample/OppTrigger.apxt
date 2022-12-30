@@ -1,0 +1,23 @@
+trigger OppTrigger on Opportunity (before insert, after insert, before update, after update, before delete, after delete, after undelete) {
+    
+    if(Trigger.isInsert && Trigger.isBefore){
+        for(Opportunity oop : Trigger.new){
+            oop.Description = 'New Description has been updated!';
+        }
+    }
+    
+    if(Trigger.isInsert && Trigger.isAfter){
+        OppTriggerHandlerCLass.createCase(Trigger.New);
+        OppTriggerHandlerCLass.createTask(Trigger.New);
+    }
+	
+    if(Trigger.isDelete && Trigger.isBefore){
+        OppTriggerHandlerCLass.preventDeleteWonOpp(Trigger.Old);
+
+    }
+    if(Trigger.isBefore && Trigger.isUpdate){
+        OppTriggerHandlerCLass.updateStageName(Trigger.New, Trigger.Old);
+
+    }
+    
+}
