@@ -1,0 +1,18 @@
+try{
+    //DML Exception
+    Contact con = new Contact();
+    insert con;
+    
+    
+    //List Exception
+    
+    List<String> myList = new List<String>{'A', 'B', 'C'};
+    System.debug(myList.get(5));
+    
+}
+catch(DMLException dmle){
+    System.debug(dmle.getMessage());
+}
+catch(ListException liste){
+    System.debug(liste.getMessage());
+}
