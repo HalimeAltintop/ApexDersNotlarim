@@ -16,3 +16,6 @@ catch(DMLException dmle){
 catch(ListException liste){
     System.debug(liste.getMessage());
 }
+
+
+//catch(QueryException qe)
