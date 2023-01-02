@@ -1,0 +1,22 @@
+try{
+    Account ac1 = new Account(Name='New Account Test5');
+    insert ac1;
+    System.debug('1. Account Id : ' + ac1.Id);
+    
+    Account ac2 = new Account(Name='New Account Test6');
+    insert ac2;
+    System.debug('2. Account Id : ' + ac2.Id);
+    
+    Account ac3 = new Account();
+    insert ac3;
+    System.debug('3. Account Id : ' + ac3.Id);
+}
+catch ( Exception e){
+    System.debug('Exception Message : ' + e.getMessage());
+    System.debug('Type Name : ' + e.getTypeName());
+    System.debug('Line : ' + e.getLineNumber());
+    System.debug('Cause : ' + e.getCause());
+}
+finally{
+    System.debug('Bu mesaj ne olursa olsun gelecek');
+}
