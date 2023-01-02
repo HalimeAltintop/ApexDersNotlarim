@@ -1,0 +1,18 @@
+public class MyCustomException extends Exception {
+
+    //Custom Exception Classin ismi Exception ile bitmeli
+    
+    
+    public static void testA(){
+        
+        try{
+            Integer x = 0;
+            if(x==0){
+                throw new MyCustomException('x in degeri 0 olamaz!');
+            }
+        }
+        catch(MyCustomException e){
+            System.debug(e.getMessage());
+        }
+    }
+}
