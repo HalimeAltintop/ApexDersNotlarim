@@ -1,0 +1,22 @@
+public class ClassA {
+    
+    public static String updatePriority(String org){
+        
+        String Priority;
+        if(org == 'Web'){
+            Priority = 'High';
+        }
+        else if(org == 'Phone'){
+            Priority = 'Medium';        
+        }
+        else if(org == 'Email'){
+            Priority = 'Low';
+        }
+        else{
+            Priority = 'Null';
+        }
+        
+        return Priority;
+    }
+    
+}
