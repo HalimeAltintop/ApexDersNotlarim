@@ -1,0 +1,18 @@
+public class AccountTriggerHandler2 {
+
+    
+    public static void updateAccountforRecursionTest(List<Account> acList){
+        
+        List<Account> acToBeUpdated = new List<Account>();
+        
+        for(Account ac : acList){
+            Account a = new Account(Id = ac.Id);
+            a.Description = 'Test Recursion';
+            acToBeUpdated.add(a);
+        }
+        if(acToBeUpdated.size()!=0){
+            update acToBeUpdated;
+        }
+    }
+    
+}
