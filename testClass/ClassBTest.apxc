@@ -1,0 +1,30 @@
+@IsTest
+public class ClassBTest {
+    
+    @IsTest
+    public static void testB(){
+        ClassB.create10ActiveAccount();
+        
+        List<Account> acList = [Select id, Name, Active__c  from Account where Active__c = 'Yes'];
+        
+        System.assertEquals(10, acList.Size());
+    }
+    
+    @isTest
+    public static void testC(){
+        for(Integer i=1; i<=5; i++){
+            Account ac = new Account(Name = 'Test', Rating = 'Cold', Active__c = 'Yes');
+            insert ac;
+        }
+        for(Integer i=1; i<=5; i++){
+            Account ac = new Account(Name = 'Test', Rating = 'Cold', Active__c = 'No');
+            insert ac;
+        }
+        ClassB.updateRating();
+        
+        List<Account> acList = [Select id,Name,Rating from Account where Rating = 'Hot'];
+        
+        System.assertEquals(5, acList.Size());
+    }
+
+}
