@@ -1,0 +1,6 @@
+public class RecursionClass {
+//prevent Recursion Class
+
+    public static Boolean recursion = false;
+    
+}
