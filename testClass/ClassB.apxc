@@ -1,0 +1,35 @@
+public class ClassB {
+
+    public static void create10ActiveAccount(){
+        
+        List<Account> acList = new List<Account>();
+        
+        for(Integer i=1; i<=10; i++){
+            
+            Account ac = new Account();
+            
+            ac.Name = 'Test Account from Test';
+            ac.Active__c = 'Yes';
+            
+            acList.add(ac);
+            
+        }
+        
+        insert acList;
+        
+    }
+    
+    public static void updateRating(){
+        
+        List<Account> acList = [Select id, Name, Rating from Account where Active__c='Yes'];
+        
+        for(Account ac : acList){
+           
+            ac.Rating = 'Hot';
+            
+        }
+        update acList;
+        
+    }
+    
+}
