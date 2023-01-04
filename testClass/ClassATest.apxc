@@ -1,0 +1,32 @@
+@IsTest
+public class ClassATest {
+    
+    @IsTest
+    public static void testForHigh(){
+        String result = ClassA.updatePriority('Web');
+        
+        System.assertEquals('High', result);
+    }
+    
+    @IsTest
+    public static void testForMedium(){
+        String result = ClassA.updatePriority('Phone');
+        
+        System.assertEquals('Medium', result);
+    }
+    
+    @IsTest
+    public static void testForLow(){
+        String result = ClassA.updatePriority('Email');
+        
+        System.assertEquals('Low', result);
+    }
+    
+    @IsTest
+    public static void testForNull(){
+        String result = ClassA.updatePriority('G');
+        
+        System.assertEquals('Null', result);
+    }
+
+}
