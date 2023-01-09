@@ -1,0 +1,27 @@
+global class BatchApex implements Database.Batchable<sObject>{
+    
+    global Database.QueryLocator start(Database.BatchableContext BC){
+        
+        String query = 'Select Id, Name from Opportunity where StageName = \'Closed Lost\' or StageName = \'Prospecting\'';
+        return Database.getQueryLocator(query);
+        
+    }
+
+    global void execute(Database.BatchableContext BC, List<Account> acList){
+        for(Account ac:acList){
+            ac.Website = 'www.twitter.com';
+        }
+        update acList;
+    }
+    
+    global void finish(Database.BatchableContext BC){
+        
+    }
+    
+}
+
+/*
+BatchApex objA = new BatchApex();
+
+Database.executeBatch(ObjA, 15);
+*/
