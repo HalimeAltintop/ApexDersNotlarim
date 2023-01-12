@@ -1,0 +1,10 @@
+
+Messaging.SingleEmailMessage message1 = new Messaging.SingleEmailMessage();
+message1.toAddresses = new String[] {'halimealtintop17@gmail.com'};
+message1.subject = 'Dogum Gunu Mesaji';
+message1.plainTextBody = 'Dogum gununuz kutlu olsun';
+
+Messaging.SingleEmailMessage[] messages = new List<Messaging.SingleEmailMessage> {message1};
+
+                
+Messaging.SendEmailResult[] results = Messaging.sendEmail(messages);
