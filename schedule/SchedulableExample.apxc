@@ -1,0 +1,32 @@
+public class SchedulableExample implements Schedulable {
+    
+    public void execute(SchedulableContext SC){
+        List<Opportunity> oppList = [Select Id, Name, CloseDate, OwnerId from Opportunity where Isclosed = false and CloseDate < Today];
+        
+        List<Task> taskList = new List<Task>();
+        
+        for(Opportunity opp : oppList){
+            Task tsk = new Task();
+            
+            tsk.Subject = 'This Opportunity needs attention';
+            tsk.Priority = 'High';
+            tsk.Status = 'Not Started';
+            tsk.OwnerId = opp.OwnerId;
+            tsk.WhatId = opp.Id;
+            
+            taskList.add(tsk);
+        }
+        insert taskList;
+    }
+
+}
+
+
+
+/*
+
+SchedulableExample objA1 = new SchedulableExample();
+
+System.schedule('Reminder for Opportunities', '00 47 06 12 01 ? 2023', objA1);
+
+*/
