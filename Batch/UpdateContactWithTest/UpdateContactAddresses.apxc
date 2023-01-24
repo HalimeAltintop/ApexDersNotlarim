@@ -1,0 +1,29 @@
+public class UpdateContactAddresses implements 
+	Database.Batchable<sObject>, Database.Stateful{
+    
+    	public Database.QueryLocator start(Database.BatchableContext BC){
+        	return Database.getQueryLocator('Select Id, BillingStreet, BillingCity, BillingState, ' +
+                                       'BillingPostalCode, (Select Id, MailingStreet, MailingCity, '+
+                                       'MailingState, MailingPostalCode from Contacts) From Account '+
+                                       'Where BillingCountry = \'United States\'');
+    	}
+        
+        public void execute(Database.BatchableContext BC, List<Account> acList){
+            List<Contact> contacts = new List<Contact>();
+            for(Account ac : acList){
+                for(Contact con : ac.contacts){
+                    con.MailingStreet = ac.BillingStreet;
+                    con.MailingCity = ac.BillingCity;
+                    con.MailingState = ac.BillingState;
+                    con.MailingPostalCode = ac.BillingPostalCode;
+                    contacts.add(con);
+                }
+            }
+            update contacts;
+        }
+        
+        public void finish(Database.BatchableContext BC){
+            
+        }
+    
+}
